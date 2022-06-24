@@ -35,13 +35,13 @@ image = Image.open('Images/Scoring.jpeg')
 st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
-st.markdown("<h3 style='text-align: left; color: blue;'>Données descriptives</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Données descriptives</h3>", unsafe_allow_html=True)
 
-st.markdown("<h3 style='text-align: left; color: blue;'>Score</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
 
-st.markdown("<h3 style='text-align: left; color: blue;'>Comparaison</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Comparaison</h3>", unsafe_allow_html=True)
 
-st.markdown("<h3 style='text-align: left; color: blue;'>Références</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
 
 st.markdown("[[1] Noah Greifer( 2022),MatchIt: Getting Started](https://cran.r-project.org/web/packages/MatchIt/vignettes/MatchIt.html)",unsafe_allow_html=True)
 
