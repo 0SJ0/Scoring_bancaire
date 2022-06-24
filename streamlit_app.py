@@ -11,6 +11,11 @@ import matplotlib.pyplot as plt
 
 
 
+#Michaël vous a fourni des spécifications pour le dashboard interactif. Celui-ci devra contenir au minimum les fonctionnalités suivantes :
+
+#Permettre de visualiser le score et l’interprétation de ce score pour chaque client de façon intelligible pour une personne non experte en data science.
+#Permettre de visualiser des informations descriptives relatives à un client (via un système de filtre).
+#Permettre de comparer les informations descriptives relatives à un client à l’ensemble des clients ou à un groupe de clients similaires.
 
 
 
@@ -21,7 +26,7 @@ import matplotlib.pyplot as plt
 st.markdown("<h1 style='text-align: center;'> Score bancaire</h1>", unsafe_allow_html=True)
 
 
-st.markdown("<p style='text-align: justify;'>Le métamatching a pour objectif d'estimer quantitativement l'effet causal d'un traitement en se basant sur plusieurs méthodes de matchings. La probabilité que l'individu reçoit le traitement peut être calculée à partir de plusieurs modèles de régressions ( logistiques ou régularisés) et l'appariement est aussi personnalisable. Notre objetif avec le métamatching est de proposer une approche ensembliste des modèles de matching pour construire la meilleure  estimation possible de l'effet causal d'un traitement sur une variable.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
 
