@@ -30,7 +30,8 @@ st.markdown("<h1 style='text-align: center;'> Score bancaire</h1>", unsafe_allow
 st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
-
+image = Image.open('Images/Scoring.jpeg')
+st.image(image, caption="Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.")
 
 
 
