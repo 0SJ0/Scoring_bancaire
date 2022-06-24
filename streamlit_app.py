@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue May 17 22:03:08 2022
-@author: Oso
+@author: Osjo
 """
 import pandas as pd
 import streamlit as st
