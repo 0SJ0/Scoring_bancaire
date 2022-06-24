@@ -31,10 +31,11 @@ st.markdown("<h1 style='text-align: center; olor: blue;'> Score bancaire</h1>", 
 
 
 image = Image.open('Images/Scoring.jpeg')
-st.image(image, caption="Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.")
+#st.image(image, caption="Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.")
+st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
-t.markdown("<h3 style='text-align: left; color: blue;'>Données descriptives</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: blue;'>Données descriptives</h3>", unsafe_allow_html=True)
 
 st.markdown("<h3 style='text-align: left; color: blue;'>Score</h3>", unsafe_allow_html=True)
 
