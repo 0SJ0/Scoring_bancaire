@@ -1,0 +1,11 @@
+pandas
+seaborn
+cffi>=1.10.0
+jinja2
+pytz
+tzlocal
+rpy2==3.5.1
+streamlit
+matplotlib
+sklearn
+Pillow
