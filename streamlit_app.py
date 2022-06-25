@@ -56,6 +56,8 @@ st.write('Sexe:','H')
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
 
+score=70
+
 fig = go.Figure(go.Indicator(
     domain = {'x': [0, 1], 'y': [0, 1]},
     value = score,
