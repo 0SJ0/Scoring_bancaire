@@ -26,8 +26,6 @@ from PIL import Image
 
 st.markdown("<h1 style='text-align: center; color: lightblue;'> Score bancaire</h1>", unsafe_allow_html=True)
 
-st.markdown("<img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif'  align='middle' alt='Employee data' width='720' height='550' title='Employee Data title'>", unsafe_allow_html=True)
-
 st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un client peut reçevoir un crédit à la consommation via un score. Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
@@ -35,8 +33,8 @@ st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un
 #st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
-image = Image.open('Images/Scoring.jpeg')
-st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu’un client rembourse son crédit, puis classifie la demande en crédit accordé ou refusé. Elle souhaite donc développer un algorithme de classification en s’appuyant sur des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.).")
+#image = Image.open('Images/Scoring.jpeg')
+#st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu’un client rembourse son crédit, puis classifie la demande en crédit accordé ou refusé. Elle souhaite donc développer un algorithme de classification en s’appuyant sur des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.).")
 
 
 
@@ -48,8 +46,10 @@ st.markdown("<h3 style='text-align: left; color: lightblue;'>Comparaison</h3>", 
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
 
-st.markdown("[[1] Noah Greifer( 2022),MatchIt: Getting Started](https://cran.r-project.org/web/packages/MatchIt/vignettes/MatchIt.html)",unsafe_allow_html=True)
+st.markdown("[[1] 10 Techniques to deal with Imbalanced Classes in Machine Learning](https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/)",unsafe_allow_html=True)
 
-st.markdown("[[2] Marco Caliendo (2005),Some Practical Guidance for the Implementation of Propensity Score Matching](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=721907)",unsafe_allow_html=True)
+st.markdown("[[2] Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)",unsafe_allow_html=True)
 
-st.markdown("[[-] Osjo (2022), lien github du métamatching  ](https://github.com/0SJ0/Metamatching)",unsafe_allow_html=True)
+st.markdown("[[-] Osjo (2022), lien github  ](https://github.com/0SJ0)",unsafe_allow_html=True)
+
+st.markdown("<img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif'  align='middle' alt='Employee data' width='720' height='550' title='Employee Data title'>", unsafe_allow_html=True)
