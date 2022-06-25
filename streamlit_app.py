@@ -28,6 +28,10 @@ st.markdown("<h1 style='text-align: center; color: lightblue;'> Score bancaire</
 
 st.markdown("![ok](https://cdn.dribbble.com/users/238057/screenshots/4688471/comp-1_1.gif)")
 
+
+st.markdown("<img src="https://cdn.dribbble.com/users/238057/screenshots/4688471/comp-1_1.gif" alt="Employee data" width="50" height="60" title="Employee Data title">")
+
+
 st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un client peut reçevoir un crédit à la consommation via un score. Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 
