@@ -38,11 +38,33 @@ st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu�
 
 
 
+ID_client = st.selectbox(
+     'Sélectionne un client :',
+     ('Client 1', 'Client 2', 'Client 3'))
+
+st.write('You selected:',ID_client)
+
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Données descriptives</h3>", unsafe_allow_html=True)
+
+st.write('ID :',ID_client)
+
+st.write('Age:','32')
+
+st.write('Sexe:','H')
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
 
+st.write('Score:','45')
+
+st.write('Graphique explication score')
+
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Comparaison</h3>", unsafe_allow_html=True)
+
+df = pd.DataFrame(
+    np.random.randn(10, 3),
+    columns=(["Client","Ensemble des clients","Groupes de clients"]))
+
+st.table(df)
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
 
