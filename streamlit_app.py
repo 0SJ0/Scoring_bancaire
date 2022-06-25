@@ -10,6 +10,7 @@ import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
+import plotly.graph_objects as go
 
 
 
@@ -55,7 +56,19 @@ st.write('Sexe:','H')
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
 
-st.write('Score:','45')
+fig = go.Figure(go.Indicator(
+    domain = {'x': [0, 1], 'y': [0, 1]},
+    value = score,
+    mode = "gauge+number+delta",
+    title = {'text': "Credit score"},
+    delta = {'reference': 50},
+    gauge = {'axis': {'range': [None, 100]},
+             'steps' : [
+                 {'range': [0, 50], 'color': "#F1CBA4"},
+                 {'range': [50, 100], 'color': "lightgreen"}],
+             'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value': 50}}))
+
+st.plotly_chart(fig, use_container_width=True)
 
 st.write('Graphique explication score')
 
