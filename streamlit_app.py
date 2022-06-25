@@ -25,7 +25,7 @@ from PIL import Image
 #
 
 
-st.markdown("<h1 style='text-align: center; color: lightblue;'> Score bancaire</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: lightblue;'> Score crédit</h1>", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un client peut reçevoir un crédit à la consommation via un score. Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
@@ -63,7 +63,7 @@ st.markdown("<h3 style='text-align: left; color: lightblue;'>Comparaison</h3>", 
 
 df = pd.DataFrame(
     np.random.randn(10, 3),
-    columns=(["Client","Ensemble des clients","Groupes de clients"]))
+    columns=(["Client","Ensemble des clients","Clients similaires"]))
 
 st.table(df)
 
