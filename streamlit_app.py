@@ -5,6 +5,7 @@ Created on Tue May 17 22:03:08 2022
 @author: Osjo
 """
 import pandas as pd
+import numpy as np
 import streamlit as st
 import seaborn as sns
 import matplotlib.pyplot as plt
