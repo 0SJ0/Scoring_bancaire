@@ -23,7 +23,7 @@ import plotly.graph_objects as go
 #Permettre de comparer les informations descriptives relatives à un client à l’ensemble des clients ou à un groupe de clients similaires.
 
 #Test
-df_test=pd.read_csv("Data/Test.csv")
+df=pd.read_csv("Data/Test.csv")
 st.dataframe(df.head())
 
 
