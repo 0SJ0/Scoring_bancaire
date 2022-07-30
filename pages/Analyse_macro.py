@@ -8,4 +8,7 @@ import plotly.graph_objects as go
 
 st.markdown("#  ❄️ Page 2 ❄️")
 
-st.write('ID :',ID_client)
+st.sidebar.markdown("# NOT Main page 🎈")
+
+
+st.sidebar.markdown("It czoijizjfpzzef ejfpjzefojzeo jfpozejfopj zepofjpze 🎈")
