@@ -4,6 +4,8 @@
 Created on Tue May 17 22:03:08 2022
 @author: Osjo
 """
+
+#Librairies utilisés
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -22,23 +24,18 @@ import plotly.graph_objects as go
 
 
 
-
-#
-
-
+#Présentation de l'application
 st.markdown("<h1 style='text-align: center; color: lightblue;'> Score crédit</h1>", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un client peut reçevoir un crédit à la consommation via un score. Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
-
-
 #st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
-
 
 image = Image.open('Images/Scoring.jpeg')
 st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu’un client rembourse son crédit, puis classifie la demande en crédit accordé ou refusé. Elle souhaite donc développer un algorithme de classification en s’appuyant sur des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.).")
 
 
+# Information générale sur un client 
 
 ID_client = st.selectbox(
      'Sélectionne un client :',
@@ -53,6 +50,9 @@ st.write('ID :',ID_client)
 st.write('Age:','32')
 
 st.write('Sexe:','H')
+
+
+#Prédiction du score
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
 
@@ -71,6 +71,9 @@ fig = go.Figure(go.Indicator(
              'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value': 50}}))
 
 st.plotly_chart(fig, use_container_width=True)
+
+
+# Autres
 
 st.write('Graphique explication score')
 
