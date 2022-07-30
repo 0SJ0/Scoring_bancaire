@@ -15,6 +15,8 @@ from PIL import Image
 import plotly.graph_objects as go
 
 
+st.sidebar.markdown("# Main page 🎈")
+
 
 
 #Michaël vous a fourni des spécifications pour le dashboard interactif. Celui-ci devra contenir au minimum les fonctionnalités suivantes :
