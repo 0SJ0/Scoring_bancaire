@@ -8,9 +8,9 @@ import plotly.graph_objects as go
 
 st.markdown("# <center> :moneybag: Analyse macro :moneybag: <\center>", unsafe_allow_html=True)
 
-st.sidebar.markdown("# Analyse micro d'un individu. 🎈")
+st.sidebar.markdown("# ANALYSE MICRO ")
 
-st.sidebar.markdown("Dans cette page, nous nous concentrons sur les caractéristiques individuelles de l'individu et des features locales qui jouent sur l'obtention ou non de son prêt.")
+st.sidebar.markdown("Dans cette page, nous nous concentrons sur les caractéristiques individuelles de l'individu et les features locales qui jouent sur l'obtention ou non de son prêt.")
 
 
 
