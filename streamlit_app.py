@@ -24,7 +24,7 @@ import plotly.graph_objects as go
 
 #Test
 df=pd.read_csv("Data/Test.csv")
-st.dataframe(df.head())
+#st.dataframe(df.head())
 
 
 #Présentation de l'application
@@ -40,9 +40,11 @@ st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu�
 
 # Information générale sur un client 
 
+liste_clients=list(df.SK_ID_CURR.values)
+
 ID_client = st.selectbox(
      'Sélectionne un client :',
-     ('Client 1', 'Client 2', 'Client 3'))
+     liste_clients)
 
 st.write('You selected:',ID_client)
 
