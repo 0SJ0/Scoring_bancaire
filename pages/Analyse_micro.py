@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import plotly.graph_objects as go
 
-st.markdown("# Page 2 ❄️")
+st.markdown("# <center> :moneybag: Analyse macro :moneybag: <\center>")
 
 
-st.write(":moneybag: Bonjour :moneybag:")
+
