@@ -48,13 +48,25 @@ ID_client = st.selectbox(
 
 st.write('You selected:',ID_client)
 
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Données descriptives</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Informations du client</h3>", unsafe_allow_html=True)
+
+ligne=df[df.SK_ID_CURR==int(ID_client)][["SK_ID_CURR","CODE_GENDER","CNT_CHILDREN","AMT_INCOME_TOTAL"]]
 
 st.write('ID :',ID_client)
 
-st.write('Age:','32')
+Sexe=ligne.CODE_GENDER.values[0]
 
-st.write('Sexe:','H')
+if Sexe :
+    Sexe="Homme"
+else :
+    Sexe="Femme"
+
+st.write("Sexe :",Sexe)
+
+st.write("Nombre d'enfant :",ligne.CNT_CHILDREN.values[0])
+
+st.write("Revenu total :",ligne.AMT_INCOME_TOTAL.values[0],"$")
+
 
 
 #Prédiction du score
