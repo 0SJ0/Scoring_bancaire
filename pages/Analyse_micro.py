@@ -7,3 +7,6 @@ from PIL import Image
 import plotly.graph_objects as go
 
 st.markdown("# Page 2 ❄️")
+
+
+st.write(:moneybag: Bonjour :moneybag:)
