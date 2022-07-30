@@ -8,7 +8,10 @@ import plotly.graph_objects as go
 
 st.markdown("#  ❄️ Page 2 ❄️")
 
-st.sidebar.markdown("# NOT Main page 🎈")
+st.sidebar.markdown("# 🎈 ANALYSE MACRO ")
+
+st.sidebar.markdown("Sur cette page, nous comparons notre individu avec un panel de 1000 indivus de notre banque avec des scores hétérogènes.")
 
 
-st.sidebar.markdown("It czoijizjfpzzef ejfpjzefojzeo jfpozejfopj zepofjpze 🎈")
+
+
