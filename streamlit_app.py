@@ -15,7 +15,7 @@ from PIL import Image
 import plotly.graph_objects as go
 
 
-st.sidebar.markdown("# Main page 🎈")
+st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
 
 
 
