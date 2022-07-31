@@ -18,6 +18,8 @@ import shap
 from streamlit_shap import st_shap
 import imblearn
 
+st.set_page_config(layout="wide")
+
 
 
 st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
