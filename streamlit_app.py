@@ -15,6 +15,8 @@ from PIL import Image
 import plotly.graph_objects as go
 import pickle
 import shap
+from streamlit_shap import st_shap
+
 
 
 st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
@@ -45,67 +47,19 @@ st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu�
 
 # Information générale sur un client 
 
-liste_clients=list(df.SK_ID_CURR.values)
+#SHAP
+filename = 'model.sav'
+model = pickle.load(open(filename, 'rb'))
 
-ID_client = st.selectbox(
-     'Sélectionne un client :',
-     liste_clients)
+explainer = shap.TreeExplainer(model[1])
+choosen_instance = df
+shap_values = explainer.shap_values(choosen_instance)
+#shap.summary_plot(shap_values,df)
 
-st.write('You selected:',ID_client)
-
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Informations du client</h3>", unsafe_allow_html=True)
-
-ligne=df[df.SK_ID_CURR==int(ID_client)][["SK_ID_CURR","CODE_GENDER","CNT_CHILDREN","AMT_INCOME_TOTAL"]]
-
-st.write('ID :',ID_client)
-
-Sexe=ligne.CODE_GENDER.values[0]
-
-if Sexe :
-    Sexe="Homme"
-else :
-    Sexe="Femme"
-
-st.write("Sexe :",Sexe)
-
-st.write("Nombre d'enfant :",ligne.CNT_CHILDREN.values[0])
-
-st.write("Revenu total :",ligne.AMT_INCOME_TOTAL.values[0],"$")
-
-
-
-#Prédiction du score
-
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
-
-score=70
-
-fig = go.Figure(go.Indicator(
-    domain = {'x': [0, 1], 'y': [0, 1]},
-    value = score,
-    mode = "gauge+number+delta",
-    title = {'text': "Credit score"},
-    delta = {'reference': 50},
-    gauge = {'axis': {'range': [None, 100]},
-             'steps' : [
-                 {'range': [0, 50], 'color': "#F1CBA4"},
-                 {'range': [50, 100], 'color': "lightgreen"}],
-             'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value': 50}}))
-
-st.plotly_chart(fig, use_container_width=True)
 
 
 # Autres
 
-st.write('Graphique explication score')
-
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Comparaison</h3>", unsafe_allow_html=True)
-
-df = pd.DataFrame(
-    np.random.randn(10, 3),
-    columns=(["Client","Ensemble des clients","Clients similaires"]))
-
-st.table(df)
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
 
