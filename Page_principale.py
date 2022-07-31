@@ -63,7 +63,7 @@ model= pd.read_pickle(r'Data/model.sav')
 explainer = shap.TreeExplainer(model[1])
 choosen_instance = df
 shap_values = explainer.shap_values(choosen_instance)
-st_shap(shap.summary_plot(shap_values,df, plot_size=[7*2,12*2]), height=900,width=800)
+st_shap(shap.summary_plot(shap_values,df, plot_size=[7*2,12*2]), height=900,width=1200)
 
 
 choosen_instance = df.loc[21]
