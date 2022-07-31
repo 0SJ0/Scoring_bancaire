@@ -21,7 +21,7 @@ import imblearn
 
 
 st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
-st.sidebar.markdown("<img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'>", unsafe_allow_html=True)
+st.sidebar.markdown("<p style="text-align:center;"> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
 
 
