@@ -15,8 +15,13 @@ st.sidebar.markdown("Sur cette page, nous vulgarisons notre modèle.")
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
+
+
+#Test
+df=pd.read_csv("Data/Test.csv")
 #SHAP
 #filename = 'Data/model.sav'
+
 
 model= pd.read_pickle(r'Data/model.sav')
 #model = pickle.load(open(filename, 'rb'))
