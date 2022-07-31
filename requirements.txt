@@ -6,4 +6,4 @@ sklearn
 Pillow
 plotly
 shap
-streamlit-shap
+streamlit_shap
