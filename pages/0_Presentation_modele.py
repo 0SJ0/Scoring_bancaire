@@ -15,3 +15,13 @@ st.sidebar.markdown("Sur cette page, nous vulgarisons notre modèle.")
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
+#SHAP
+#filename = 'Data/model.sav'
+
+model= pd.read_pickle(r'Data/model.sav')
+#model = pickle.load(open(filename, 'rb'))
+
+explainer = shap.TreeExplainer(model[1])
+choosen_instance = df
+shap_values = explainer.shap_values(choosen_instance)
+st_shap(shap.summary_plot(shap_values,df,plot_size=[5*3,10*2]), height=1020,width=1300)
