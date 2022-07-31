@@ -1,3 +1,4 @@
+#Librairies utilisés
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -5,7 +6,17 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 import plotly.graph_objects as go
+import pickle
 import shap
+from streamlit_shap import st_shap
+import imblearn
+
+CURRENT_THEME = "light"
+IS_DARK_THEME = False
+
+st.set_page_config(layout="wide")
+
+
 
 st.markdown("#  <center> :moneybag: Présentation du modèle :moneybag: </center> ", unsafe_allow_html=True)
 
