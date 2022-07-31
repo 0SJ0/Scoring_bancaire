@@ -18,6 +18,9 @@ import shap
 from streamlit_shap import st_shap
 import imblearn
 
+CURRENT_THEME = "light"
+IS_DARK_THEME = False
+
 st.set_page_config(layout="wide")
 
 
