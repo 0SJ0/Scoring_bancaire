@@ -60,7 +60,7 @@ choosen_instance = df
 shap_values = explainer.shap_values(choosen_instance)
 #st_shap(shap.summary_plot(shap_values,df, plot_size=[7,12]))
 
-st_shap(shap.summary_plot(shap_values,df,auto_size_plot=True))
+st_shap(shap.summary_plot(shap_values,df,auto_size_plot=True), height=300)
 
 
 # Autres
