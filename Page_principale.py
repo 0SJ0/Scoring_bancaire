@@ -21,6 +21,7 @@ import imblearn
 
 
 st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
+st.sidebar.markdown("<img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif'  align='middle' alt='Employee data' width='720' height='550' title='Employee Data title'>", unsafe_allow_html=True)
 
 
 
@@ -72,4 +73,3 @@ st.markdown("[[2] Interpretable Machine Learning](https://christophm.github.io/i
 
 st.markdown("[[-] Osjo (2022), lien github  ](https://github.com/0SJ0)",unsafe_allow_html=True)
 
-st.markdown("<img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif'  align='middle' alt='Employee data' width='720' height='550' title='Employee Data title'>", unsafe_allow_html=True)
