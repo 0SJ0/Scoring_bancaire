@@ -16,6 +16,9 @@ st.sidebar.markdown("# 🎈 ANALYSE MICRO ")
 
 st.sidebar.markdown("Sur cette page, nous nous concentrons sur les caractéristiques individuelles de l'individu et les features locales qui jouent sur l'obtention ou non de son prêt.")
 
+st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
+
+
 liste_clients=list(df.SK_ID_CURR.values)
 
 ID_client = st.selectbox(
