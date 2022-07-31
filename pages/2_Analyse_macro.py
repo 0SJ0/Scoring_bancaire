@@ -5,6 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 import plotly.graph_objects as go
+import pickle
+import shap
 
 st.markdown("#  <center> :moneybag: Analyse macro :moneybag: </center> ", unsafe_allow_html=True)
 
