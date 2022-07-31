@@ -13,6 +13,9 @@ st.sidebar.markdown("# 🎈 ANALYSE MACRO ")
 
 st.sidebar.markdown("Sur cette page, nous comparons notre individu avec un panel de 1000 indivus de notre banque avec des scores hétérogènes.")
 
+st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
+
+
 
 
 
