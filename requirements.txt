@@ -7,3 +7,4 @@ Pillow
 plotly
 pickle
 shap
+streamlit-shap
