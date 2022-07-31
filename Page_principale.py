@@ -55,10 +55,10 @@ st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu�
 model= pd.read_pickle(r'Data/model.sav')
 #model = pickle.load(open(filename, 'rb'))
 
-#explainer = shap.TreeExplainer(model[1])
-#choosen_instance = df
-#shap_values = explainer.shap_values(choosen_instance)
-#shap.summary_plot(shap_values,df)
+explainer = shap.TreeExplainer(model[1])
+choosen_instance = df
+shap_values = explainer.shap_values(choosen_instance)
+st_shap(shap.summary_plot(shap_values,df))
 
 
 
