@@ -13,7 +13,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from PIL import Image
 import plotly.graph_objects as go
-import pikle
+import pickle
 import shap
 from streamlit_shap import st_shap
 
@@ -49,7 +49,7 @@ st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu�
 
 #SHAP
 filename = 'model.sav'
-model = load(open(filename, 'rb'))
+model = pickle.load(open(filename, 'rb'))
 
 explainer = shap.TreeExplainer(model[1])
 choosen_instance = df
