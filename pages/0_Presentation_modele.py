@@ -37,8 +37,7 @@ with open("Note_technique_scoring.pdf", "rb") as pdf_file:
     
 st.markdown(pdf_display, unsafe_allow_html=True)
     
-    
-displayPDF("https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf")
+   
 
 # Autres
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
