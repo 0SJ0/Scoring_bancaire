@@ -58,7 +58,7 @@ st.write("Revenu total :",ligne.AMT_INCOME_TOTAL.values[0],"$")
 
 #Prédiction du score
 
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Score crédit</h3>", unsafe_allow_html=True)
 
 debut_requete="https://api-score-credit.herokuapp.com/ID/"
 ID=str(ID_client)
@@ -81,7 +81,7 @@ fig = go.Figure(go.Indicator(
                  {'range': [60, 100], 'color': "#EC5A5A"}],
              'threshold' : {'line': {'color': "red", 'width': 10}, 'thickness': 0.9, 'value': 60}}))
 
-fig.show()
+st.plotly_chart(fig, use_container_width=True)
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité locale</h3>", unsafe_allow_html=True)
 
@@ -97,5 +97,5 @@ shap_values = explainer.shap_values(choosen_instance)
 shap.initjs()
 st_shap(shap.force_plot(explainer.expected_value[0], shap_values[0], choosen_instance), height=8000, width=1200)
 
-st.plotly_chart(fig, use_container_width=True)
+
 
