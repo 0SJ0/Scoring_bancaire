@@ -27,7 +27,6 @@ ID_client = st.selectbox(
      'Sélectionne un client :',
      liste_clients)
 
-st.write('You selected:',ID_client)
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Informations du client</h3>", unsafe_allow_html=True)
 
