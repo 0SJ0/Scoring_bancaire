@@ -26,11 +26,9 @@ st.sidebar.markdown("Documentation sur notre modèle de scoring")
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
-with open("Note_technique_scoring.pdf","rb") as f:
-      base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-      pdf_display = F'<embed src=”data:application/pdf;base64,{base64_pdf}” width=”700″ height=”1000″ type=”application/pdf”>’
-
-st.markdown(pdf_display, unsafe_allow_html=True)
+st.markdown("""
+<embed src="https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf" width="400" height="400">
+""", unsafe_allow_html=True)
 
 # Autres
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
