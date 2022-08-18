@@ -7,6 +7,7 @@ from PIL import Image
 import plotly.graph_objects as go
 import shap
 import requests
+import pickle
 
 #Test
 df=pd.read_csv("Data/data.csv")
