@@ -36,6 +36,9 @@ ID_client = st.selectbox(
 
 samples = df.to_numpy()
 
+
+logreg = pickle.load(open("Data/model.sav", 'rb'))
+
 neigh = NearestNeighbors(n_neighbors=31)
 neigh.fit(samples)
 result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
