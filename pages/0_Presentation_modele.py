@@ -30,17 +30,11 @@ st.markdown("""
 <embed src="Note_technique_scoring.pdf" width="800" height="800">
 """, unsafe_allow_html=True)
 
-def displayPDF(file):
-    # Opening file from file path
-    with open(file, "rb") as f:
-        base64_pdf = base64.b64encode(f.read()).decode('utf-8')
-       
-
-    # Embedding PDF in HTML
-    pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
-
-    # Displaying File
-    st.markdown(pdf_display, unsafe_allow_html=True)
+with open("Note_technique_scoring.pdf", "rb") as pdf_file:
+    base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
+    pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">' 
+    
+st.markdown(pdf_display, unsafe_allow_html=True)
     
     
 displayPDF("https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf")
