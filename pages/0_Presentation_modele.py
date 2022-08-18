@@ -35,7 +35,7 @@ st.markdown("[Lien de la note technique](https://github.com/0SJ0/Scoring_bancair
 
 image = Image.open('Images/Extrait_note.png')
 
-st.image(image, "Une note conenant l'approche méthodologique du modèle, l'algorithme d'optimisation, la fonction coût, l'interprétabilité locale/globale et des pistes d'améliorations.")
+st.image(image, "Une note conenant l'approche méthodologique , l'algorithme d'optimisation, la fonction coût, l'interprétabilité locale/globale et des pistes d'améliorations du modèle.")
    
 
 
