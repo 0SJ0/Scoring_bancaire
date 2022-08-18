@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 import shap
 
 #Test
-df=pd.read_csv("Data/Test.csv")
+df=pd.read_csv("Data/data.csv")
 
 st.markdown("#  <center> :moneybag: Analyse micro :moneybag:  </center> ", unsafe_allow_html=True)
 
@@ -58,14 +58,16 @@ score=70
 fig = go.Figure(go.Indicator(
     domain = {'x': [0, 1], 'y': [0, 1]},
     value = score,
-    mode = "gauge+number+delta",
-    title = {'text': "Credit score"},
+    mode = "gauge+number",
+    title = {'text': "Score crédit"},
     delta = {'reference': 50},
     gauge = {'axis': {'range': [None, 100]},
              'steps' : [
-                 {'range': [0, 50], 'color': "#F1CBA4"},
-                 {'range': [50, 100], 'color': "lightgreen"}],
-             'threshold' : {'line': {'color': "red", 'width': 4}, 'thickness': 0.75, 'value': 50}}))
+                 {'range': [0, 60], 'color': "#91F792"},
+                 {'range': [60, 100], 'color': "#EC5A5A"}],
+             'threshold' : {'line': {'color': "red", 'width': 10}, 'thickness': 0.9, 'value': 60}}))
+
+fig.show()
 
 st.plotly_chart(fig, use_container_width=True)
 
