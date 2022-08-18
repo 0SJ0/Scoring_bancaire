@@ -55,5 +55,5 @@ result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, 
 df2 = df.filter(items = list(result[1][0])[1:], axis=0)
 explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
 shap_values=explainer.shap_values(df2)
-st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'))
+st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'), height=8000, width=1200)
 
