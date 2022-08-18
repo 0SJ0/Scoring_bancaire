@@ -34,6 +34,16 @@ samples = df.to_numpy()
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable qualitative</h3>", unsafe_allow_html=True)
 
+df_type=df.loc[:, df.columns != 'SK_ID_CURR']
+df_int=df_type.select_dtypes(include=['int64'])
+
+
+df_float=df_type.select_dtypes(include=['float64'])
+
+
+Col_qual = st.selectbox(
+     'Sélectionne un client :',
+     list(df_int.columns))
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
 
