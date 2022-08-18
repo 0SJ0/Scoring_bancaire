@@ -28,6 +28,9 @@ st.set_page_config(layout="wide")
 
 st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
 
+st.sidebar.markdown("Page d'accueil du dashboard. Ci-dessus le menu principal qui permet de découvrir notre modèle de scoring.")
+
+
 
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
@@ -49,29 +52,12 @@ df=pd.read_csv("Data/Test.csv")
 
 st.markdown("#  <center> :moneybag: Score crédit :moneybag:  </center> ", unsafe_allow_html=True)
 
-st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un client peut reçevoir un crédit à la consommation via un score. Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: justify;'>Ce dashboard a pour objectif de diffuser notre outil de scoring de crédit. Sans compter la page d'accueil, il est divisé en 3 pages accesibles via le menu de gauche. Vous pouvez vous informer sur le modèle, réaliser une analyse micro ou macro d'un client.</p>", unsafe_allow_html=True)
 
 #st.markdown("<p style='text-align: justify;'>Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
 image = Image.open('Images/Scoring.jpeg')
-st.image(image, caption=" L'outil 'scoring crédit' calcule la probabilité qu’un client rembourse son crédit, puis classifie la demande en crédit accordé ou refusé. Elle souhaite donc développer un algorithme de classification en s’appuyant sur des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.).")
-
-
-# Information générale sur un client 
-
-
-
-
-model= pd.read_pickle(r'Data/model.sav')
-#model = pickle.load(open(filename, 'rb'))
-
-explainer = shap.TreeExplainer(model[1])
-choosen_instance = df.loc[21]
-shap_values = explainer.shap_values(choosen_instance)
-shap.initjs()
-st_shap(shap.force_plot(explainer.expected_value[1], shap_values[1], choosen_instance), height=1000, width=1500)
-
-#st_shap(shap.summary_plot(shap_values,df,auto_size_plot=True), height=700)
+st.image(image, caption=" Notre score est basé sur la probabilité qu’un client rembourse son crédit à partir des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.). Il est compris entre 0 et 100. Plus il est proche de 100, plus l'individu est à risque.")
 
 
 # Autres
