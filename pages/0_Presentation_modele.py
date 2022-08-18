@@ -13,10 +13,7 @@ import imblearn
 import base64
 import urllib.request as urllib2
 
-CURRENT_THEME = "light"
-IS_DARK_THEME = False
 
-st.set_page_config(layout="wide")
 
 
 
