@@ -23,7 +23,7 @@ st.markdown("#  <center> :moneybag: Analyse micro :moneybag:  </center> ", unsaf
 
 st.sidebar.markdown("# 🎈 ANALYSE MICRO ")
 
-st.sidebar.markdown("Sur cette page, nous nous concentrons sur les caractéristiques individuelles de l'individu et les features locales qui jouent sur l'obtention ou non de son prêt.")
+st.sidebar.markdown("Analyse micro ratachée à un client unique.")
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
@@ -95,7 +95,7 @@ shap_values = explainer.shap_values(choosen_instance)
 #print(choosen_instance)
 #print(shap_values)
 shap.initjs()
-st_shap(shap.force_plot(explainer.expected_value[0], shap_values[0], choosen_instance), height=8000, width=1200)
+st_shap(shap.force_plot(explainer.expected_value[1], shap_values[0], choosen_instance), height=8000, width=1200)
 
 
 
