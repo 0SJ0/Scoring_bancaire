@@ -35,15 +35,7 @@ st.markdown("[Lien de la note technique](https://github.com/0SJ0/Scoring_bancair
 
 image = Image.open('Images/Extrait_note.png')
 
-st.image(image, "Une note conenant ...", width=500)
+st.image(image, "Une note conenant l'approche méthodologique du modèle, l'algorithme d'optimisation, la fonction coût, l'interprétabilité locale/globale et des pistes d'améliorations.")
    
 
-# Autres
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
-
-st.markdown("[[1] 10 Techniques to deal with Imbalanced Classes in Machine Learning](https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/)",unsafe_allow_html=True)
-
-st.markdown("[[2] Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)",unsafe_allow_html=True)
-
-st.markdown("[[-] Osjo (2022), lien github  ](https://github.com/0SJ0)",unsafe_allow_html=True)
 
