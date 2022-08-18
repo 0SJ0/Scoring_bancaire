@@ -10,7 +10,7 @@ import shap
 #Test
 df=pd.read_csv("Data/Test.csv")
 
-st.markdown("#  <center> :moneybag: analyse micro :moneybag:  </center> ", unsafe_allow_html=True)
+st.markdown("#  <center> :moneybag: Analyse micro :moneybag:  </center> ", unsafe_allow_html=True)
 
 
 st.sidebar.markdown("# 🎈 ANALYSE MICRO ")
