@@ -10,10 +10,6 @@ from sklearn.neighbors import NearestNeighbors
 import pickle
 from streamlit_shap import st_shap
 
-CURRENT_THEME = "light"
-IS_DARK_THEME = False
-
-st.set_page_config(layout="wide")
 
 st.markdown("#  <center> :moneybag: Analyse macro :moneybag: </center> ", unsafe_allow_html=True)
 
@@ -55,5 +51,5 @@ result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, 
 df2 = df.filter(items = list(result[1][0])[1:], axis=0)
 explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
 shap_values=explainer.shap_values(df2)
-st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'), height=8000, width=1200)
+st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'), height=2000, width=1000)
 
