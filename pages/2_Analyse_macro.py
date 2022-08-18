@@ -10,6 +10,11 @@ from sklearn.neighbors import NearestNeighbors
 import pickle
 from streamlit_shap import st_shap
 
+CURRENT_THEME = "light"
+IS_DARK_THEME = False
+
+st.set_page_config(layout="wide")
+
 st.markdown("#  <center> :moneybag: Analyse macro :moneybag: </center> ", unsafe_allow_html=True)
 
 st.sidebar.markdown("# 🎈 ANALYSE MACRO ")
@@ -18,10 +23,7 @@ st.sidebar.markdown("Analyse macro d'un client. Celui-ci est comparé relativeme
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
-CURRENT_THEME = "light"
-IS_DARK_THEME = False
 
-st.set_page_config(layout="wide")
 
 #Test
 df=pd.read_csv("Data/data.csv")
