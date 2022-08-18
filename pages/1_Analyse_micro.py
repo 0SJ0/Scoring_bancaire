@@ -23,7 +23,7 @@ st.markdown("#  <center> :moneybag: Analyse micro :moneybag:  </center> ", unsaf
 
 st.sidebar.markdown("# 🎈 ANALYSE MICRO ")
 
-st.sidebar.markdown("Analyse micro ratachée à un client unique.")
+st.sidebar.markdown("Analyse micro ratachée à un client spéficique. On retrouves ses informations et son score crédit justifiée par une interprétabilité locale.")
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
@@ -54,12 +54,6 @@ st.write("Nombre d'enfant :",ligne.CNT_CHILDREN.values[0])
 
 st.write("Revenu total :",ligne.AMT_INCOME_TOTAL.values[0],"$")
 
-
-
-#Prédiction du score
-
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Score crédit</h3>", unsafe_allow_html=True)
-
 debut_requete="https://api-score-credit.herokuapp.com/ID/"
 ID=str(ID_client)
 requete_finale=debut_requete+ID
@@ -68,6 +62,20 @@ API_requete = requests.get(requete_finale)
 reponse=API_requete.json()
 #print(reponse['Defaut_credit'])
 score=round(reponse["Score"])
+
+credit_accorde="Non"
+
+if(reponse['Defaut_credit'])==0 : credit_accorde="Oui"
+
+st.write("crédit accordé :",credit_accorde)
+
+
+
+#Prédiction du score
+
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Score crédit</h3>", unsafe_allow_html=True)
+
+
 
 fig = go.Figure(go.Indicator(
     domain = {'x': [0, 1], 'y': [0, 1]},
