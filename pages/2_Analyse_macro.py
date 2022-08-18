@@ -36,10 +36,20 @@ ID_client = st.selectbox(
 
 samples = df.to_numpy()
 
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable qualitative</h3>", unsafe_allow_html=True)
+
+
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
+
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</h3>", unsafe_allow_html=True)
+
+
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
+
 
 logreg = pickle.load(open("Data/model.sav", 'rb'))
 
-neigh = NearestNeighbors(n_neighbors=11)
+neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
 result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
 df2 = df.filter(items = list(result[1][0])[1:], axis=0)
