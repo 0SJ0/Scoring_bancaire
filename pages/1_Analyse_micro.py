@@ -76,5 +76,19 @@ fig = go.Figure(go.Indicator(
 
 fig.show()
 
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité locale</h3>", unsafe_allow_html=True)
+
+index=int(X_train[X_train.SK_ID_CURR==ID_client].index.values)
+
+logreg = pickle.load(open("Data/model.sav", 'rb'))
+explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
+choosen_instance = df.loc[index]
+shap_values = explainer.shap_values(choosen_instance)
+#print(explainer.expected_value)
+#print(choosen_instance)
+#print(shap_values)
+shap.initjs()
+shap.force_plot(explainer.expected_value[0], shap_values[0], choosen_instance)
+
 st.plotly_chart(fig, use_container_width=True)
 
