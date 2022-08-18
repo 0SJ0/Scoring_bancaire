@@ -10,11 +10,6 @@ import requests
 import pickle
 from streamlit_shap import st_shap
 
-CURRENT_THEME = "light"
-IS_DARK_THEME = False
-
-st.set_page_config(layout="wide")
-
 #Test
 df=pd.read_csv("Data/data.csv")
 
@@ -103,7 +98,7 @@ shap_values = explainer.shap_values(choosen_instance)
 #print(choosen_instance)
 #print(shap_values)
 shap.initjs()
-st_shap(shap.force_plot(explainer.expected_value[1], shap_values[1], choosen_instance), height=2000, width=1000)
+st_shap(shap.force_plot(explainer.expected_value[1], shap_values[1], choosen_instance), height=8000, width=1200)
 
 
 
