@@ -33,7 +33,7 @@ st.markdown("""
 
 
 
-with urllib.request.urlopen(("https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf", "rb") as pdf_file:
+with urllib.request.urlopen("https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf", "rb") as pdf_file:
     base64_pdf = base64.b64encode(pdf_file.read()).decode('utf-8')
     pdf_display = f'<embed src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf">' 
     
