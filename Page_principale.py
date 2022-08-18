@@ -27,6 +27,9 @@ st.set_page_config(layout="wide")
 
 
 st.sidebar.markdown("# 🎈 PAGE D'ACCUEIL ")
+
+
+
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
 
@@ -43,7 +46,8 @@ df=pd.read_csv("Data/Test.csv")
 
 
 #Présentation de l'application
-st.markdown("<h1 style='text-align: center; color: lightblue;'> Score crédit</h1>", unsafe_allow_html=True)
+
+st.markdown("#  <center> :moneybag: Score crédit :moneybag:  </center> ", unsafe_allow_html=True)
 
 st.markdown("<p style='text-align: justify;'>L'objectif est de déterminer si un client peut reçevoir un crédit à la consommation via un score. Cet interface intéractif permmet de visualiser les informations descriptives et le score bancaire d'un client. Il est aussi possibles de comparer ces informations avec l'ensemble des clients ou à un groupe similaire.</p>", unsafe_allow_html=True)
 
