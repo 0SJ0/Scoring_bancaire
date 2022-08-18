@@ -10,6 +10,7 @@ import pickle
 import shap
 from streamlit_shap import st_shap
 import imblearn
+import base64
 
 CURRENT_THEME = "light"
 IS_DARK_THEME = False
