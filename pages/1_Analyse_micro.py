@@ -95,7 +95,7 @@ shap_values = explainer.shap_values(choosen_instance)
 #print(choosen_instance)
 #print(shap_values)
 shap.initjs()
-st_shap(shap.force_plot(explainer.expected_value[0], shap_values[1], choosen_instance), height=8000, width=1200)
+st_shap(shap.force_plot(explainer.expected_value[0], shap_values[0], choosen_instance), height=8000, width=1200)
 
 
 
