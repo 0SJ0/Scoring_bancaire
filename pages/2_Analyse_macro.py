@@ -42,10 +42,14 @@ df_float=df_type.select_dtypes(include=['float64'])
 
 
 Col_qual = st.selectbox(
-     'Sélectionne un client :',
+     'Sélectionne une colonne qualitative :',
      list(df_int.columns))
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
+
+Col_quant = st.selectbox(
+     'Sélectionne une colonne quantitative:',
+     list(df_float.columns))
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</h3>", unsafe_allow_html=True)
 
