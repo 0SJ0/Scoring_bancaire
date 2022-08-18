@@ -28,15 +28,11 @@ st.sidebar.markdown("Documentation sur notre modèle de scoring")
 
 st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbble.com/users/513906/screenshots/5384407/dribbb.gif' width='250' height='200'> </p>", unsafe_allow_html=True)
 
-st.markdown("""
-<embed src="Note_technique_scoring.pdf" width="800" height="800">
-""", unsafe_allow_html=True)
-
-
+st.markdown("Ci-dessous un lien vers une note technique explicitant notre démarche de modélisation.")
 
 image = Image.open('Note_technique_scoring_png.png')
 
-st.image(image, caption='Sunrise by the mountains')
+st.image(image, "https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf")
    
 
 # Autres
