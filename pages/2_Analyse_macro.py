@@ -26,11 +26,17 @@ st.set_page_config(layout="wide")
 #Test
 df=pd.read_csv("Data/data.csv")
 
+liste_clients=list(df.SK_ID_CURR.values)
+
+ID_client = st.selectbox(
+     'Sélectionne un client :',
+     liste_clients)
+
 samples = df.to_numpy()
 
 neigh = NearestNeighbors(n_neighbors=31)
 neigh.fit(samples)
-result=neigh.kneighbors(df.iloc[1].to_numpy().reshape(1, -1))
+result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
 df2 = df.filter(items = list(result[1][0])[1:], axis=0)
 explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
 shap_values=explainer.shap_values(df2)
