@@ -30,9 +30,9 @@ st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbb
 
 st.markdown("Ci-dessous un lien vers une note technique explicitant notre démarche de modélisation.")
 
-image = Image.open('Note_technique_scoring_png.png')
+image = Image.open('Images/Extrait_note.png')
 
-st.image(image, "[lien](https://github.com/0SJ0/Scoring_bancaire/blob/main/Note_technique_scoring.pdf)" ,unsafe_allow_html=True)
+st.image(image, "Une note conenant ...")
    
 
 # Autres
