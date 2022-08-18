@@ -53,7 +53,14 @@ st.write("Revenu total :",ligne.AMT_INCOME_TOTAL.values[0],"$")
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Score</h3>", unsafe_allow_html=True)
 
-score=70
+debut_requete="https://api-score-credit.herokuapp.com/ID/"
+ID=str(ID_client)
+requete_finale=debut_requete+ID
+API_requete = requests.get(requete_finale)
+#print(API_requete)
+reponse=API_requete.json()
+#print(reponse['Defaut_credit'])
+score=round(reponse["Score"])
 
 fig = go.Figure(go.Indicator(
     domain = {'x': [0, 1], 'y': [0, 1]},
