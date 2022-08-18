@@ -60,14 +60,4 @@ image = Image.open('Images/Scoring.jpeg')
 st.image(image, caption=" Notre score est basé sur la probabilité qu’un client rembourse son crédit à partir des sources de données variées (données comportementales, données provenant d'autres institutions financières, etc.). Il est compris entre 0 et 100. Plus il est proche de 100, plus l'individu est à risque.")
 
 
-# Autres
-
-
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Références</h3>", unsafe_allow_html=True)
-
-st.markdown("[[1] 10 Techniques to deal with Imbalanced Classes in Machine Learning](https://www.analyticsvidhya.com/blog/2020/07/10-techniques-to-deal-with-class-imbalance-in-machine-learning/)",unsafe_allow_html=True)
-
-st.markdown("[[2] Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/)",unsafe_allow_html=True)
-
-st.markdown("[[-] Osjo (2022), lien github  ](https://github.com/0SJ0)",unsafe_allow_html=True)
 
