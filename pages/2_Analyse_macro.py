@@ -51,17 +51,17 @@ Col_qual = st.selectbox(
 
 logreg = pickle.load(open("Data/model.sav", 'rb'))
 df3=df
-df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df)[:,1]]
+df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df3)[:,1]]
 ####
-df3.loc[df['SCORE'] > 70, 'ACCORD_CREDIT'] = "Risque de défaut"  
-df3.loc[df['SCORE'] <= 70, 'ACCORD_CREDIT'] = 'Crédit accordé' 
+df3.loc[df3['SCORE'] > 70, 'ACCORD_CREDIT'] = "Risque de défaut"  
+df3.loc[df3['SCORE'] <= 70, 'ACCORD_CREDIT'] = 'Crédit accordé' 
 
 
 
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
 
-fig = plt.figure()#figsize=(10, 4)
+fig = plt.figure(figsize=(10, 4))#figsize=(10, 4)
 ax = sns.boxplot(x=df3["ACCORD_CREDIT"], y=df3["INCOME_CREDIT_PERC"])
 plt.scatter(x=[0],y=[0],marker = ",",c="purple",s=222)
 st.pyplot(fig)
