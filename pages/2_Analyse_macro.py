@@ -81,6 +81,7 @@ fig3 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
 sns.scatterplot(x = jitter(df3[Col_quant],2), 
                 y = jitter(df3[Col_qual],2),
                 hue=df3["SCORE"],s=200,alpha=0.5)
+plt.scatter(x=[5],y=[3],marker = ",",c="purple",s=222)
 st.pyplot(fig3)
 
 
@@ -88,7 +89,7 @@ st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité 
 
 
 #df=pd.read_csv("Data/data.csv")
-samples=df
+samples=df.to_numpy()
 neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
 result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
