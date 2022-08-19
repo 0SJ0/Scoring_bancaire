@@ -26,10 +26,11 @@ st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbb
 
 #Test
 df=pd.read_csv("Data/data.csv")
+logreg = pickle.load(open("Data/model.sav", 'rb'))
 
 explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
 
-logreg = pickle.load(open("Data/model.sav", 'rb'))
+
 df3=df
 df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df3)[:,1]]
 ####
