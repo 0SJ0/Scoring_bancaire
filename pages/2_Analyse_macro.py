@@ -77,7 +77,7 @@ fig = plt.figure(figsize=(10, 4))#figsize=(10, 4)
 sns.countplot(x =df3["ACCORD_CREDIT"],hue=df3[Col_qual])
 
 pos=0
-position=df[df.SK_ID_CURR==int(ID_client)]["ACCORD_CREDIT"]
+position=df3[df3.SK_ID_CURR==ID_client]["ACCORD_CREDIT"]
 if(position!="Crédit accordé") : pos=1
 
 plt.scatter(x=[pos],y=[600],marker = ",",c="purple",s=222)
@@ -94,7 +94,7 @@ Col_quant = st.selectbox(
 fig2 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
 ax = sns.boxplot(x=df3["ACCORD_CREDIT"], y=df3[Col_quant])
 
-plt.scatter(x=[pos],y=[0],marker = ",",c="purple",s=222)
+plt.scatter(x=[0],y=[0],marker = ",",c="purple",s=222)
 st.pyplot(fig2)
 
 
