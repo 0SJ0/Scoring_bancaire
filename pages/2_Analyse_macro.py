@@ -78,7 +78,8 @@ sns.countplot(x =df3["ACCORD_CREDIT"],hue=df3[Col_qual])
 
 pos=0
 position=df3[df3.SK_ID_CURR==ID_client]["ACCORD_CREDIT"]
-if(position!="Crédit accordé") : pos=1
+if(position.values=="Crédit accordé") : 
+    pos=1
 
 plt.scatter(x=[pos],y=[600],marker = ",",c="purple",s=222)
 st.pyplot(fig)
