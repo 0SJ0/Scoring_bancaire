@@ -10,6 +10,9 @@ from sklearn.neighbors import NearestNeighbors
 import pickle
 from streamlit_shap import st_shap
 
+def jitter(values,j):
+    return values + np.random.normal(j,0.1,values.shape)
+
 
 st.markdown("#  <center> :moneybag: Analyse macro :moneybag: </center> ", unsafe_allow_html=True)
 
@@ -45,7 +48,23 @@ Col_qual = st.selectbox(
      'Sélectionne une colonne qualitative :',
      list(df_int.columns))
 
+
+logreg = pickle.load(open("Data/model.sav", 'rb'))
+df3=df
+df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df)[:,1]]
+####
+df3.loc[df['SCORE'] > 70, 'ACCORD_CREDIT'] = "Risque de défaut"  
+df3.loc[df['SCORE'] <= 70, 'ACCORD_CREDIT'] = 'Crédit accordé' 
+
+
+
+
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
+
+fig = plt.figure()#figsize=(10, 4)
+ax = sns.boxplot(x=df3["ACCORD_CREDIT"], y=df3["INCOME_CREDIT_PERC"])
+plt.scatter(x=[0],y=[0],marker = ",",c="purple",s=222)
+st.pyplot(fig)
 
 Col_quant = st.selectbox(
      'Sélectionne une colonne quantitative:',
@@ -57,7 +76,6 @@ st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
 
 
-logreg = pickle.load(open("Data/model.sav", 'rb'))
 
 neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
