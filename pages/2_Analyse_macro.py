@@ -91,7 +91,7 @@ st.pyplot(fig3)
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
 
 
-#df=pd.read_csv("Data/data.csv")
+df=pd.read_csv("Data/data.csv")
 samples=df.to_numpy()
 neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
