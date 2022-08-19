@@ -95,7 +95,7 @@ Col_quant = st.selectbox(
 fig2 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
 ax = sns.boxplot(x=df3["ACCORD_CREDIT"], y=df3[Col_quant])
 
-val=df[df.SK_ID_CURR==o][Col_quant]
+val=df3[df3.SK_ID_CURR==o][Col_quant]
 plt.scatter(x=[pos],y=[val.values],marker = ",",c="purple",s=222)
 st.pyplot(fig2)
 
