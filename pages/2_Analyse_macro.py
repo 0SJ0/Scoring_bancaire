@@ -27,6 +27,13 @@ st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbb
 #Test
 df=pd.read_csv("Data/data.csv")
 
+logreg = pickle.load(open("Data/model.sav", 'rb'))
+df3=df
+df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df3)[:,1]]
+####
+df3.loc[df3['SCORE'] > 70, 'ACCORD_CREDIT'] = "Risque de défaut"  
+df3.loc[df3['SCORE'] <= 70, 'ACCORD_CREDIT'] = 'Crédit accordé' 
+
 liste_clients=list(df.SK_ID_CURR.values)
 
 ID_client = st.selectbox(
@@ -48,27 +55,29 @@ Col_qual = st.selectbox(
      'Sélectionne une colonne qualitative :',
      list(df_int.columns))
 
+fig = plt.figure(figsize=(10, 4))#figsize=(10, 4)
+sns.countplot(x =df3["ACCORD_CREDIT"],hue=df3[Col_qual])
+plt.scatter(x=[0],y=[600],marker = ",",c="purple",s=222)
+st.pyplot(fig)
 
-logreg = pickle.load(open("Data/model.sav", 'rb'))
-df3=df
-df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df3)[:,1]]
-####
-df3.loc[df3['SCORE'] > 70, 'ACCORD_CREDIT'] = "Risque de défaut"  
-df3.loc[df3['SCORE'] <= 70, 'ACCORD_CREDIT'] = 'Crédit accordé' 
+
 
 
 
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
 
-fig = plt.figure(figsize=(10, 4))#figsize=(10, 4)
-ax = sns.boxplot(x=df3["ACCORD_CREDIT"], y=df3["INCOME_CREDIT_PERC"])
-plt.scatter(x=[0],y=[0],marker = ",",c="purple",s=222)
-st.pyplot(fig)
-
 Col_quant = st.selectbox(
      'Sélectionne une colonne quantitative:',
      list(df_float.columns))
+
+
+fig2 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
+ax = sns.boxplot(x=df3["ACCORD_CREDIT"], y=df3[Col_quant])
+plt.scatter(x=[0],y=[0],marker = ",",c="purple",s=222)
+st.pyplot(fig2)
+
+
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</h3>", unsafe_allow_html=True)
 
@@ -76,7 +85,7 @@ st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
 
 
-
+df=pd.read_csv("Data/data.csv")
 neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
 result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
