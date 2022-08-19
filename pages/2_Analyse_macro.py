@@ -86,6 +86,7 @@ st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité 
 
 
 df=pd.read_csv("Data/data.csv")
+samples=df
 neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
 result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
