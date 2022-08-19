@@ -45,6 +45,8 @@ ID_client = st.selectbox(
      'Sélectionne un client :',
      liste_clients)
 
+st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
+
 df=pd.read_csv("Data/data.csv")
 samples=df.to_numpy()
 neigh = NearestNeighbors(n_neighbors=6)
@@ -101,15 +103,5 @@ plt.scatter(x=[5],y=[3],marker = ",",c="purple",s=222)
 st.pyplot(fig3)
 
 
-st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
 
-
-df=pd.read_csv("Data/data.csv")
-samples=df.to_numpy()
-neigh = NearestNeighbors(n_neighbors=6)
-neigh.fit(samples)
-result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
-df2 = df.filter(items = list(result[1][0])[1:], axis=0)
-shap_values=explainer.shap_values(df2)
-st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'), height=1000, width=1200)
 
