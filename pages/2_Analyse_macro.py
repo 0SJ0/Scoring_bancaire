@@ -61,10 +61,6 @@ plt.scatter(x=[0],y=[600],marker = ",",c="purple",s=222)
 st.pyplot(fig)
 
 
-
-
-
-
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Distribution d'une variable quantitative</h3>", unsafe_allow_html=True)
 
 Col_quant = st.selectbox(
@@ -81,11 +77,17 @@ st.pyplot(fig2)
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</h3>", unsafe_allow_html=True)
 
+fig3 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
+sns.scatterplot(x = jitter(df3[Col_quant],2), 
+                y = jitter(df3[Col_qual],2),
+                hue=df3["SCORE"],s=200,alpha=0.5)
+st.pyplot(fig3)
+
 
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Interprétabilité globale</h3>", unsafe_allow_html=True)
 
 
-df=pd.read_csv("Data/data.csv")
+#df=pd.read_csv("Data/data.csv")
 samples=df
 neigh = NearestNeighbors(n_neighbors=6)
 neigh.fit(samples)
