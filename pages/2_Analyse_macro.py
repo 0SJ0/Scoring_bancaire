@@ -107,7 +107,11 @@ fig3 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
 sns.scatterplot(x = jitter(df3[Col_quant],2), 
                 y = jitter(df3[Col_qual],2),
                 hue=df3["SCORE"],s=200,alpha=0.5)
-plt.scatter(x=[5],y=[3],marker = ",",c="purple",s=222)
+
+val1=df3[df3.SK_ID_CURR==ID_client][Col_qual]
+val2=df3[df3.SK_ID_CURR==ID_client][Col_quant]
+
+plt.scatter(x=[val1],y=[val2],marker = ",",c="purple",s=222)
 st.pyplot(fig3)
 
 
