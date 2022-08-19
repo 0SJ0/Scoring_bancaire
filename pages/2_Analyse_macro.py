@@ -11,7 +11,7 @@ import pickle
 from streamlit_shap import st_shap
 
 def jitter(values,j):
-    return values + np.random.normal(j,0.01,values.shape)
+    return values + np.random.normal(j,0.1,values.shape)
 
 
 st.markdown("#  <center> :moneybag: Analyse macro :moneybag: </center> ", unsafe_allow_html=True)
@@ -104,8 +104,8 @@ st.pyplot(fig2)
 st.markdown("<h3 style='text-align: left; color: lightblue;'>Analyse bivariée</h3>", unsafe_allow_html=True)
 
 fig3 = plt.figure(figsize=(10, 4))#figsize=(10, 4)
-sns.scatterplot(x = jitter(df3[Col_quant],2), 
-                y = jitter(df3[Col_qual],2),
+sns.scatterplot(x = jitter(df3[Col_quant],0), 
+                y = jitter(df3[Col_qual],0),
                 hue=df3["SCORE"],s=200,alpha=0.5)
 
 val1=df3[df3.SK_ID_CURR==ID_client][Col_qual]
