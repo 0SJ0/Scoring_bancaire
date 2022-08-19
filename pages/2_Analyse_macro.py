@@ -30,15 +30,7 @@ logreg = pickle.load(open("Data/model.sav", 'rb'))
 
 explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
 
-df=pd.read_csv("Data/data.csv")
-samples=df.to_numpy()
-neigh = NearestNeighbors(n_neighbors=6)
-neigh.fit(samples)
-result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
-df2 = df.filter(items = list(result[1][0])[1:], axis=0)
-explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
-shap_values=explainer.shap_values(df2)
-st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'), height=1000, width=1200)
+
 
 
 df3=df
@@ -52,6 +44,17 @@ liste_clients=list(df.SK_ID_CURR.values)
 ID_client = st.selectbox(
      'Sélectionne un client :',
      liste_clients)
+
+df=pd.read_csv("Data/data.csv")
+samples=df.to_numpy()
+neigh = NearestNeighbors(n_neighbors=6)
+neigh.fit(samples)
+result=neigh.kneighbors(df[df.SK_ID_CURR==int(ID_client)].to_numpy().reshape(1, -1))
+df2 = df.filter(items = list(result[1][0])[1:], axis=0)
+explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
+shap_values=explainer.shap_values(df2)
+st_shap(shap.summary_plot(shap_values, features=df, plot_type='bar'), height=1000, width=1200)
+
 
 samples = df.to_numpy()
 
