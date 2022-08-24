@@ -82,7 +82,7 @@ fig = go.Figure(go.Indicator(
              'steps' : [
                  {'range': [0, 60], 'color': "#91F792"},
                  {'range': [60, 100], 'color': "#EC5A5A"}],
-             'threshold' : {'line': {'color': "red", 'width': 10}, 'thickness': 0.9, 'value': 70}}))
+             'threshold' : {'line': {'color': "red", 'width': 10}, 'thickness': 0.9, 'value': 30}}))
 
 st.plotly_chart(fig, use_container_width=True)
 
