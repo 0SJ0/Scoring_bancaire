@@ -80,8 +80,8 @@ fig = go.Figure(go.Indicator(
     delta = {'reference': 50},
     gauge = {'axis': {'range': [None, 100]},
              'steps' : [
-                 {'range': [0, 60], 'color': "#91F792"},
-                 {'range': [60, 100], 'color': "#EC5A5A"}],
+                 {'range': [0, 30], 'color': "#91F792"},
+                 {'range': [30, 100], 'color': "#EC5A5A"}],
              'threshold' : {'line': {'color': "red", 'width': 10}, 'thickness': 0.9, 'value': 30}}))
 
 st.plotly_chart(fig, use_container_width=True)
