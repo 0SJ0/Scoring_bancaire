@@ -36,8 +36,8 @@ explainer = shap.KernelExplainer(logreg.predict_proba,shap.kmeans(df,3))
 df3=df
 df3["SCORE"]=[round(i*100) for i in logreg.predict_proba(df3)[:,1]]
 ####
-df3.loc[df3['SCORE'] > 70, 'ACCORD_CREDIT'] = "Risque de défaut"  
-df3.loc[df3['SCORE'] <= 70, 'ACCORD_CREDIT'] = 'Crédit accordé' 
+df3.loc[df3['SCORE'] > 30, 'ACCORD_CREDIT'] = "Risque de défaut"  
+df3.loc[df3['SCORE'] <= 30, 'ACCORD_CREDIT'] = 'Crédit accordé' 
 
 liste_clients=list(df.SK_ID_CURR.values)
 
