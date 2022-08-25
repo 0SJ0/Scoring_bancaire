@@ -43,9 +43,8 @@ st.sidebar.markdown("<p style='text-align:center;'> <img src='https://cdn.dribbb
 #Permettre de visualiser des informations descriptives relatives à un client (via un système de filtre).
 #Permettre de comparer les informations descriptives relatives à un client à l’ensemble des clients ou à un groupe de clients similaires.
 
-#Test
-df=pd.read_csv("Data/Test.csv")
-#st.dataframe(df.head())
+
+
 
 
 #Présentation de l'application
