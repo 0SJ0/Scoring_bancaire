@@ -6,3 +6,7 @@ L'objectif est de créer un modèle de scoring qui détermine la probabilité qu
 Lien de l'application :
 
 https://0sj0-scoring-bancaire-page-principale-7vzhuw.streamlitapp.com
+
+Lien de l'API :
+
+https://api-score-credit.herokuapp.com/ID/368305 
